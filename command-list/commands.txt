@@ -1,0 +1,135 @@
+//-----------------------------------------------------
+
+//	Restituisce le cartelle fino ad 1GB ordinate per dimensione
+
+//-----------------------------------------------------
+
+
+du -k | awk '$1 > 1000000' | sort -nr
+
+
+
+//-----------------------------------------------------
+
+//	Restituisce il numero di cartelle ordinate per dimensione
+
+//-----------------------------------------------------
+
+
+du -k * | sort -nr
+
+
+
+//-----------------------------------------------------
+
+//	Restituisce la dimensione delle cartelle
+
+//-----------------------------------------------------
+
+
+du -hs *
+
+
+//-----------------------------------------------------
+
+//	Restituisce le prime 10 cartelle ordinate per dimensione + tempo di esecuzione
+
+//-----------------------------------------------------
+
+
+time du -a | sort -nr | head -n 10
+
+
+
+//-----------------------------------------------------
+
+ //	Restituisce il numero di files
+
+//-----------------------------------------------------
+
+
+find . -type f | wc -l
+
+
+//-----------------------------------------------------
+
+ //	Restituisce il numero di files con una determinata estensione (CAMBIARE GLI APICI)
+
+//-----------------------------------------------------
+
+
+find path -type f -name “*.EXT" | wc -l
+
+
+
+
+//-----------------------------------------------------
+
+// Eliminare Tag in remoto
+
+//-----------------------------------------------------
+
+
+git tag -l | xargs -n 1 git push --delete origin 
+
+
+
+
+//-----------------------------------------------------
+
+// Eliminare Tag in locale
+
+//-----------------------------------------------------
+
+
+git tag -l | xargs git tag -d
+
+
+
+//-----------------------------------------------------
+
+// Fix npm permissions
+
+//-----------------------------------------------------
+
+
+sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
+
+
+
+
+
+//-----------------------------------------------------
+
+// Sublime Cli
+
+//-----------------------------------------------------
+
+
+
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+
+
+//-----------------------------------------------------
+
+// To create alias
+
+//-----------------------------------------------------
+
+
+subl ~/.bash_profile
+
+
+Poi per creare l'alias:
+alias ll="ls -A"
+
+
+//-----------------------------------------------------
+
+// Open n instances ios simulator
+
+//-----------------------------------------------------
+
+cd /Applications/Xcode.app/Contents/Developer/Applications
+
+open -n Simulator.app;
